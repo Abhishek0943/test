@@ -1,6 +1,10 @@
 import { useState } from "react";
 import "./App.css";
 import window2 from "./assets/window2.png"
+import image from "./assets/image.png"
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 function App() {
   return (
     <div className="app">
@@ -27,9 +31,9 @@ function Navbar() {
     <header className="navbar">
       <div className=" navbar-inner">
         <div className="logo">
-          <img  className="logo-badge" src="https://d3d.ai/logo.png"/>
+          <img className="logo-badge" src="https://d3d.ai/logo.png" />
           <span className="logo-text">DeepInspect
-          <span style={{color:"#0a91b1"}}>3D</span>
+            <span style={{ color: "#0a91b1" }}>3D</span>
           </span>
         </div>
         <div className="nav-actions">
@@ -53,7 +57,7 @@ function Hero() {
       <div className="container hero-grid">
         <div className="hero-left">
           <p className="badge">AI-powered 3D inspection</p>
-          <h1 style={{fontSize:"60px"}}>
+          <h1 style={{ fontSize: "60px" }}>
             Analyse, Inspect &amp; Share{" "}
             <span className="accent">3D Models</span>
           </h1>
@@ -70,7 +74,7 @@ function Hero() {
         </div>
 
         <div className="hero-right">
-          <div className="window" style={{aspectRatio:"9/7"}}>
+          <div className="window" style={{ aspectRatio: "9/7" }}>
             <div className="window-header">
               <div className="dots">
                 <span />
@@ -159,32 +163,32 @@ function Features() {
     {
       title: "Multi-Format Support",
       desc: "Import and inspect OBJ, FBX, GLB, STEP and many more formats in seconds.",
-      icon:<ion-icon name="cube"></ion-icon>
+      icon: <ion-icon name="cube"></ion-icon>
     },
     {
       title: "VR Support",
       desc: "Step into your 3D models in immersive virtual reality with one click.",
-    icon:  <ion-icon name="bag-remove"></ion-icon>
+      icon: <ion-icon name="bag-remove"></ion-icon>
     },
     {
       title: "AI-Powered Analysis",
       desc: "Automatically detect surface defects, cracks, voids and anomalies.",
-      icon:<ion-icon name="ear"></ion-icon>
+      icon: <ion-icon name="ear"></ion-icon>
     },
     {
       title: "Inspection Workflows",
       desc: "Create review runs for every model, tracking and assessments included.",
-      icon:<ion-icon name="share-social"></ion-icon>
+      icon: <ion-icon name="share-social"></ion-icon>
     },
     {
       title: "Team Collaboration",
       desc: "Enable teams with inline comments, approval flows and presentations.",
-      icon:<ion-icon name="bar-chart"></ion-icon>
+      icon: <ion-icon name="bar-chart"></ion-icon>
     },
     {
       title: "Secure Sharing",
       desc: "Share models securely with comments, annotations and version control.",
-      icon:<ion-icon name="people"></ion-icon>
+      icon: <ion-icon name="people"></ion-icon>
     },
   ];
 
@@ -199,9 +203,9 @@ function Features() {
         <div className="features-grid">
           {features.map((f) => (
             <div key={f.title} className="feature-card">
-             {f.icon}
-              <h3 style={{fontSize:"20px"}}>{f.title}</h3>
-              <p style={{fontSize:"16px"}}>{f.desc}</p>
+              {f.icon}
+              <h3 style={{ fontSize: "20px" }}>{f.title}</h3>
+              <p style={{ fontSize: "16px" }}>{f.desc}</p>
             </div>
           ))}
         </div>
@@ -233,7 +237,7 @@ function InteractiveModel() {
             </span>
           </div>
           <div className="window-body single">
-            <img style={{width:"100%"}} src={window2}/>
+            <img style={{ width: "100%" }} src={window2} />
           </div>
         </div>
       </div>
@@ -255,20 +259,20 @@ function AICapabilities() {
 
   return (
     <section className="section ai-capabilities">
-      <div className="container ai-grid" style={{alignItems:"center"}}>
+      <div className="container ai-grid" style={{ alignItems: "center" }}>
         <div className="ai-panel">
           <h2 className="section-title">AI Analysis Capabilities</h2>
           <ul className="checklist">
             {items.map((item) => (
               <li key={item}>
-                <span style={{background:"linear-gradient(135deg, rgba(59, 130, 246, .5) 0%, rgba(37, 99, 235, .5) 100%)", color:"white", border:"none", padding:"15px"}} className="check-icon">✓</span>
-                <span style={{fontSize:"16px", color:"white"}}>{item}</span>
+                <span style={{ background: "linear-gradient(135deg, rgba(59, 130, 246, .5) 0%, rgba(37, 99, 235, .5) 100%)", color: "white", border: "none", padding: "15px" }} className="check-icon">✓</span>
+                <span style={{ fontSize: "16px", color: "white" }}>{item}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="window" style={{aspectRatio:"9/7"}}>
+        <div className="window" style={{ aspectRatio: "9/7" }}>
           <div className="window-header">
             <div className="dots">
               <span />
@@ -329,84 +333,54 @@ function FeaturedExperiences() {
         <p className="section-subtitle center">
           Share projects with internal teams, vendors and clients in a click.
         </p>
-  <Slider {...settings}>
-<div className="window window-large">
-          <div className="window-header">
-            <div className="dots">
-              <span />
-              <span />
-              <span />
-            </div>
-            <span className="window-title">
-              https://app.deepinspect3d.ai/share/model-245
-            </span>
-          </div>
-          <div className="window-body single">
-            <div className="share-placeholder">
-              <div className="share-card">
-                <h3>Share project model with</h3>
-                <ul>
-                  <li>engineering-team@company.com</li>
-                  <li>qa-review@company.com</li>
-                  <li>client@example.com</li>
-                </ul>
-                <button className="btn primary full">Generate secure link</button>
+        <Slider {...settings}>
+          <div className="window window-large">
+            <div className="window-header">
+              <div className="dots">
+                <span />
+                <span />
+                <span />
               </div>
+              <span className="window-title">
+                https://app.deepinspect3d.ai/share/model-245
+              </span>
+            </div>
+            <div className="window-body single">
+              <img src={image} style={{width:"100%"}}/>
             </div>
           </div>
-        </div>
-        <div className="window window-large">
-          <div className="window-header">
-            <div className="dots">
-              <span />
-              <span />
-              <span />
-            </div>
-            <span className="window-title">
-              https://app.deepinspect3d.ai/share/model-245
-            </span>
-          </div>
-          <div className="window-body single">
-            <div className="share-placeholder">
-              <div className="share-card">
-                <h3>Share project model with</h3>
-                <ul>
-                  <li>engineering-team@company.com</li>
-                  <li>qa-review@company.com</li>
-                  <li>client@example.com</li>
-                </ul>
-                <button className="btn primary full">Generate secure link</button>
+          <div className="window window-large">
+            <div className="window-header">
+              <div className="dots">
+                <span />
+                <span />
+                <span />
               </div>
+              <span className="window-title">
+                https://app.deepinspect3d.ai/share/model-245
+              </span>
+            </div>
+            <div className="window-body single">
+              <img src={image} style={{width:"100%"}}/>
             </div>
           </div>
-        </div>
-        <div className="window window-large">
-          <div className="window-header">
-            <div className="dots">
-              <span />
-              <span />
-              <span />
-            </div>
-            <span className="window-title">
-              https://app.deepinspect3d.ai/share/model-245
-            </span>
-          </div>
-          <div className="window-body single">
-            <div className="share-placeholder">
-              <div className="share-card">
-                <h3>Share project model with</h3>
-                <ul>
-                  <li>engineering-team@company.com</li>
-                  <li>qa-review@company.com</li>
-                  <li>client@example.com</li>
-                </ul>
-                <button className="btn primary full">Generate secure link</button>
+          <div className="window window-large">
+            <div className="window-header">
+              <div className="dots">
+                <span />
+                <span />
+                <span />
               </div>
+              <span className="window-title">
+                https://app.deepinspect3d.ai/share/model-245
+              </span>
+            </div>
+            <div className="window-body single">
+                <img src={image} style={{width:"100%"}}/>
             </div>
           </div>
-        </div>
-  </Slider>
-        
+        </Slider>
+
       </div>
     </section>
   );
@@ -464,14 +438,14 @@ function Pricing() {
             <div
               key={plan.name}
               className={`pricing-card ${plan.highlight ? "pricing-highlight" : ""}`}
-              style={{background:"rgba(255, 255, 255, 0.03)"}}
+              style={{ background: "rgba(255, 255, 255, 0.03)" }}
             >
               {plan.highlight && <span className="pricing-badge">Popular</span>}
-              <h3 style={{fontSize:"24px"}}>{plan.name}</h3>
-              <p className="pricing-price" style={{fontSize:"36px"}}>{plan.price}</p>
-              <ul className="pricing-list" style={{display:"flex", flexDirection:"column", gap:"10px", marginTop:"10px"}}>
+              <h3 style={{ fontSize: "24px" }}>{plan.name}</h3>
+              <p className="pricing-price" style={{ fontSize: "36px" }}>{plan.price}</p>
+              <ul className="pricing-list" style={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "10px" }}>
                 {plan.features.map((f) => (
-                  <li style={{color:"white", fontSize:"16px"}} key={f}><ion-icon style={{color:"#254783", fontSize:"20px"}} name="checkmark"></ion-icon>{f}</li>
+                  <li style={{ color: "white", fontSize: "16px" }} key={f}><ion-icon style={{ color: "#254783", fontSize: "20px" }} name="checkmark"></ion-icon>{f}</li>
                 ))}
               </ul>
               <button className="btn full primary">
@@ -529,11 +503,11 @@ function FAQ() {
               <div
                 key={item.q}
                 className={`faq-item ${isOpen ? "open" : ""}`}
-              style={{background:"transparent"}}
+                style={{ background: "transparent" }}
                 onClick={() => setOpenIndex(isOpen ? -1 : index)}
               >
                 <div className="faq-question"
-                  style={{background:"transparent"}}
+                  style={{ background: "transparent" }}
                 >
                   <span>{item.q}</span>
                   <span className="faq-toggle">{isOpen ? "-" : "+"}</span>
@@ -560,39 +534,39 @@ function Footer() {
       <div className="container footer-grid">
         <div>
           <div className="logo">
-            <span className="logo-text" style={{border:"none", paddingLeft:"0"}}>DeepInspect 3D</span>
+            <span className="logo-text" style={{ border: "none", paddingLeft: "0" }}>DeepInspect 3D</span>
           </div>
-          <p className="footer-text" style={{fontSize:"16px"}}>
+          <p className="footer-text" style={{ fontSize: "16px" }}>
             AI-powered 3D review and analysis for engineering professionals.
           </p>
         </div>
 
         <div className="footer-links">
           <div>
-            <h4 style={{fontSize:"18px"}}>Product</h4>
-            <a style={{fontSize:"16px", }}href="#features">Features</a>
-            <a style={{fontSize:"16px", }}href="#pricing">Pricing</a>
-            <a style={{fontSize:"16px", }}href="#faq">FAQs</a>
+            <h4 style={{ fontSize: "18px" }}>Product</h4>
+            <a style={{ fontSize: "16px", }} href="#features">Features</a>
+            <a style={{ fontSize: "16px", }} href="#pricing">Pricing</a>
+            <a style={{ fontSize: "16px", }} href="#faq">FAQs</a>
           </div>
           <div>
-            <h4 style={{fontSize:"18px"}}>Resources</h4>
-            <a style={{fontSize:"16px", }}href="#top">Docs</a>
-            <a style={{fontSize:"16px", }}href="#top">Security</a>
+            <h4 style={{ fontSize: "18px" }}>Resources</h4>
+            <a style={{ fontSize: "16px", }} href="#top">Docs</a>
+            <a style={{ fontSize: "16px", }} href="#top">Security</a>
           </div>
           <div>
-            <h4 style={{fontSize:"18px"}}>Company</h4>
-            <a style={{fontSize:"16px", }}href="#top">About</a>
-            <a style={{fontSize:"16px", }}href="#top">Contact</a>
+            <h4 style={{ fontSize: "18px" }}>Company</h4>
+            <a style={{ fontSize: "16px", }} href="#top">About</a>
+            <a style={{ fontSize: "16px", }} href="#top">Contact</a>
           </div>
         </div>
       </div>
 
-      <div className="footer-bottom" style={{paddingBottom:"50px",paddingTop:"20px", maxWidth:"90%", margin:"auto", marginTop:"20px"}}>
+      <div className="footer-bottom" style={{ paddingBottom: "50px", paddingTop: "20px", maxWidth: "90%", margin: "auto", marginTop: "20px" }}>
         <span>© {new Date().getFullYear()} DeepInspect 3D.</span>
         <div className="footer-bottom-links">
-          <a style={{fontSize:"16px"}} href="#top">Privacy Policy</a>
-          <a style={{fontSize:"16px"}} href="#top">Terms of Service</a>
-          <a style={{fontSize:"16px"}} href="#top">Cookie Policy</a>
+          <a style={{ fontSize: "16px" }} href="#top">Privacy Policy</a>
+          <a style={{ fontSize: "16px" }} href="#top">Terms of Service</a>
+          <a style={{ fontSize: "16px" }} href="#top">Cookie Policy</a>
         </div>
       </div>
     </footer>

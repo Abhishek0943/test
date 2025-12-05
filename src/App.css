@@ -16,7 +16,10 @@
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Inter", sans-serif;
 }
-
+.slick-slider {
+  width: 800px !important;
+  margin: auto  ;
+}
 *,
 *::before,
 *::after {
